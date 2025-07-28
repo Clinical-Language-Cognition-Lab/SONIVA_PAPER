@@ -71,16 +71,16 @@ The input data should be an Excel file with the following structure:
 
 ## 🔧 Command Line Arguments
 ```bash
-    usage: main.py [-h] --data_path DATA_PATH [--model {SVM,RF,NN,all}]
+usage: main.py [-h] --data_path DATA_PATH [--model {SVM,RF,NN,all}]
                    [--output_dir OUTPUT_DIR] [--cv_folds CV_FOLDS]
 
-**Required arguments:**
-- `--data_path DATA_PATH` – Path to the Excel data file
+Required arguments:
+--data_path DATA_PATH` – Path to the Excel data file
 
-**Optional arguments:**
-- `--model {SVM,RF,NN,all}` – Model to train (default: SVM)
-- `--output_dir OUTPUT_DIR` – Directory to save results (default: results)
-- `--cv_folds CV_FOLDS` – Number of cross-validation folds (default: 9)
+Optional arguments:
+--model {SVM,RF,NN,all}` – Model to train (default: SVM)
+--output_dir OUTPUT_DIR` – Directory to save results (default: results)
+--cv_folds CV_FOLDS` – Number of cross-validation folds (default: 9)
 
 ```
 
@@ -124,7 +124,7 @@ Each run creates a timestamped directory in `results/` containing:
 - `neural_network_model.pth`: Saved neural network model (if NN is trained)
 
 **Example Results Structure:**
-
+```bash
 results/
 └── run\_20241201\_143052/
 ├── results\_summary.json
@@ -135,8 +135,6 @@ results/
 └── neural\_network\_model.pth
 
 ```
-
----
 
 ## 🔬 Reproducibility
 
@@ -157,7 +155,6 @@ We recommend using the exact package versions specified in `requirements.txt`. T
 - **Recommended:** 8GB RAM, 4-core CPU
 - **GPU:** Optional (CUDA-compatible for neural networks)
 
----
 
 ## 📝 Example Usage
 
