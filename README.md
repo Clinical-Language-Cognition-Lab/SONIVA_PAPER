@@ -182,7 +182,6 @@ We recommend using the exact package versions specified in `requirements.txt`. T
 - Check for missing values in the dataset or NaNs.
 - Verify that 'Label' column contains only 'Control' and 'Patient' values.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
