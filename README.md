@@ -12,6 +12,15 @@ This repository contains the code for reproducing the results presented in **"SO
 
 ---
 
+## 📥 Dataset Access
+The SONIVA acoustic features dataset is available for download via OneDrive:  
+**[Download SONIVA Dataset](PUT_YOUR_ONEDRIVE_LINK_HERE)**  
+
+For details on dataset structure, metadata, and usage instructions, see **[DATA_ACCESS.md](DATA_ACCESS.md)**.
+
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -37,6 +46,9 @@ This repository contains the code for reproducing the results presented in **"SO
 ```bash
     pip install -r requirements.txt
 ```
+
+**4. Download the dataset from OneDrive and place it in the `data/` directory.**
+
 ---
 
 ## Basic Usage
@@ -58,6 +70,9 @@ The input data should be an Excel file with the following structure:
 | S001 | 0.123    | 0.456    | ... | 0.789    | Control |
 | S001 | 0.234    | 0.567    | ... | 0.890    | Control |
 | S002 | 0.345    | 0.678    | ... | 0.901    | Patient |
+
+See **[DATA_ACCESS.md](DATA_ACCESS.md)** for full specifications.
+
 
 **Required columns:**
 - **ID:** Subject identifier (for group-based cross-validation)
@@ -186,10 +201,12 @@ We recommend using the exact package versions specified in `requirements.txt`. T
 ---
 
 ## 📚 Citation
-If you use this code in your research, please cite our paper:
-
-    @article....
-
+If you use this code or dataset in your research, please cite our paper:
+```bibtex
+@article{sanguedolce2025soniva,
+  ...
+}
+```
 ---
 
 ## 🙏 Acknowledgments
