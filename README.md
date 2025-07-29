@@ -11,21 +11,18 @@ We release a **fine-tuned Whisper ASR model** trained on sentence-wise `.cha` tr
 
 ---
 
+
 ## 📥 Data Access
 
-All datasets are hosted on **OneDrive** for secure sharing:
+All SONIVA datasets (acoustic features, metadata, ASR model, and transcripts) are hosted together on **OneDrive** for secure sharing:
 
-- **Acoustic Classification Dataset:**  
-  [🔗 Download Acoustic Features + Metadata](PUT_ONEDRIVE_LINK_ACOUSTIC_HERE)
+**[🔗 Download SONIVA Data and Models]([PUT_ONEDRIVE_LINK_HERE](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true))**
 
-- **ASR Whisper Fine-Tuning & Transcripts:**  
-  [🔗 Download Fine-Tuned Whisper Model + CHA Files](PUT_ONEDRIVE_LINK_ASR_HERE)
-
-Each OneDrive package includes:
-- `acoustic_features_with_id.xlsx` – Extracted acoustic features with IDs and labels.
-- `metadata.xlsx` – Feature descriptions, sample details, and quality control information.
-- `.cha` transcript files – Sentence-wise speech annotations (for ASR).
-- Fine-tuned ASR model – Ready-to-use Whisper model.
+The OneDrive package includes:
+- `acoustic_features_with_id.xlsx` – Extracted acoustic features with subject IDs and labels.  
+- `metadata.xlsx` – Clinical and demographic metadata (IC3 and PLORAS columns).  
+- `.cha` transcript files – Orthographic and phonetic transcripts for ASR benchmarking.  
+- Fine-tuned Whisper Medium model – Fully trained ASR model ready for testing.
 
 ---
 
