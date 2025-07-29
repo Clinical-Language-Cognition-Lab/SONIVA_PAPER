@@ -20,7 +20,7 @@ Details about the dataset structure and usage are provided in **[DATA_ACCESS.md]
 
 ### Installation
 1. Clone this repository:
-   ```bash
+```bash
    git clone https://github.com/Clinical-Language-Cognition-Lab/SONIVA_PAPER.git  
    cd SONIVA_PAPER/acoustic_classification
 ```
