@@ -1,13 +1,13 @@
 # SONIVA ASR Fine-Tuning – Whisper Medium
 
-This folder contains resources and instructions for using the **fine-tuned Whisper Medium model** trained on the **SONIVA dataset**. The model has been fine-tuned by updating **all trainable parameters (encoder and decoder)** to improve transcription accuracy on aphasic speech.
+This folder contains resources and instructions for using the **fine-tuned Whisper Medium model** trained on the **SONIVA dataset**. The model has been fine-tuned by updating **all trainable parameters (encoder and decoder)** to improve transcription accuracy on post-stroke speech.
 
 ---
 
 ## 📄 Model Details
 - **Base model:** Whisper Medium (OpenAI).
 - **Fine-tuning:** Full fine-tuning (encoder + decoder parameters).
-- **Training data:** SONIVA transcripts (aphasic and control speech).
+- **Training data:** SONIVA transcripts (patients speech only).
 - **Goal:** Reduce word error rate (WER) for aphasic speech recognition.
 
 ---
