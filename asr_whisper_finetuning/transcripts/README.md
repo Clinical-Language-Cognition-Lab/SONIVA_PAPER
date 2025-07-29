@@ -10,7 +10,7 @@ You can download all transcripts from OneDrive:
 
 ## What’s Included
 - `.cha` files for IC3 and PLORAS participants.
-- Fully annotated transcripts following the [CHAT](https://talkbank.org/manuals/CHAT.pdf) standard.
+- Fully annotated transcripts following the [CHAT](https://talkbank.org/manuals/CHAT.pdf](https://d1wqtxts1xzle7.cloudfront.net/30895631/clan-libre.pdf?1392212424=&response-content-disposition=inline%3B+filename%3Dprograms.pdf&Expires=1753798678&Signature=GqNUTyvL5KSmBCIDmRRa0jBDjw3Z9SbB0Hf-FMGP7tQex7Gz0YBJgeutvU-YgX1-uLHy5pMGSyDJwfuWrihm00-2dkLzpY1sHpdADUwRCoot0CDBXVnTuPnBpd7nomvKioQb1CgBxTJ2hhng4ZEHXjP8k6s5Nr5HbLKGcHcZz-EoR3aisDqvS49~WQcpD9IXXN7952vZHcm~vblSY1Mfd4ECvrzO4x0QR-0s4D6vpYhY9QHtR6C4PcwVA-GxCRmUD4c~Mo0pb8ZiNoNjCLGrPNS2163ULgQvs~xCdNbnJttoilhNgosbYJyY7vZGAjYXyCcHQrri92DapnQ70ZNP1w__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)) standard.
 - Ready for use with CLAN or `pyhton` for linguistic analysis.
 
 ## Audio Access
