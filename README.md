@@ -70,7 +70,7 @@ SONIVA_PAPER/
 ## ASR Whisper Fine-Tuning
 
 1. **Download the fine-tuned Whisper model and `.cha` transcripts** from OneDrive:  
-   [🔗 Download ASR Model + Transcripts](PUT_ONEDRIVE_LINK_ASR_HERE)
+   [🔗 Download ASR Model + Transcripts]([PUT_ONEDRIVE_LINK_ASR_HERE](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER%2FWHISPER%5FMEDIUM%5FFINE%2DTUNED&sortField=LinkFilename&isAscending=true))
 
 2. **Follow the detailed instructions** provided in [README_asr.md](asr_whisper_finetuning/README_asr.md).
 
