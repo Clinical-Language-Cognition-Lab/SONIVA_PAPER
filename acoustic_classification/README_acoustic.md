@@ -24,16 +24,16 @@ Details about the dataset structure and usage are provided in **[DATA_ACCESS.md]
    git clone https://github.com/Clinical-Language-Cognition-Lab/SONIVA_PAPER.git  
    cd SONIVA_PAPER/acoustic_classification
 ```
-3. Create a virtual environment (recommended):
+2. Create a virtual environment (recommended):
 ```bash
    python -m venv venv  
    source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
-4. Install dependencies:
+3. Install dependencies:
 ```bash
    pip install -r requirements.txt
 ```
-6. Place the dataset (`acoustic_features_with_id.xlsx`) in the `data/` directory.
+4. Place the dataset (`acoustic_features_with_id.xlsx`) in the `data/` directory.
 
 ---
 
