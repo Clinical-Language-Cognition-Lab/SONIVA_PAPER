@@ -77,18 +77,31 @@ SONIVA_PAPER/
 
 2. **Follow the detailed instructions** provided in [README_asr.md](asr_whisper_finetuning/README_asr.md).
 
+
 ## 📚 Citation
-
-If you use this repository or dataset, please cite:
-
+If you use this code or dataset in your research, please cite our paper:
 ```bibtex
 @article{sanguedolce2025soniva,
-  title={SONIVA: Speech recOgNItion Validation in Aphasia},
-  author={Sanguedolce, Giulia and Price, Cathy J. and Brook, Sophie and Gruia, Dragos C. and Parkinson, Niamh V. and Naylor, Patrick A. and Geranmayeh, Fatemeh},
-  journal={[Journal Name]},
-  year={2025},
-  doi={To be assigned}
+  ...
 }
+```
+---
 
+## 🙏 Acknowledgments
+- [Funding sources]
+- [Collaborators]
+
+---
+
+## 📞 Contact
+For questions about this code or paper:
+- **First Author:** gs2022@ic.ac.uk
+- **Corresponding Author:** fatemeh.geranmayeh00@imperial.ac.uk
+- **Issues:** Please use GitHub Issues for technical problems
+
+---
+
+**Last Updated:** 29/07/2025  
+**Version:** 1.0.0
 
 
