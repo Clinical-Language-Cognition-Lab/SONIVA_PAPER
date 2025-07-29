@@ -15,7 +15,7 @@ This folder contains resources and instructions for using the **fine-tuned Whisp
 ## 📥 Download the Fine-Tuned Model (Manual)
 The fine-tuned Whisper model is hosted on OneDrive:
 
-**🔗 [Download Whisper Medium – SONIVA Fine-Tuned Model](PUT_YOUR_ONEDRIVE_LINK_HERE)**
+**🔗 [Download Whisper Medium – SONIVA Fine-Tuned Model](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true)**
 
 **Manual Step Required:**  
 Due to its large size, you must **manually download and extract** the model folder.  
