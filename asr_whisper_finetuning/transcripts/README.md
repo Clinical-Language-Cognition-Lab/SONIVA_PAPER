@@ -4,7 +4,7 @@ The `.cha` transcript files used in the ASR fine-tuning experiments are **not st
 
 ## How to Access
 You can download all transcripts from OneDrive:  
-**[Download SONIVA Transcripts](PUT_YOUR_ONEDRIVE_LINK_HERE)**
+**[Download SONIVA Transcripts](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true)**
 
 > **Note:** The transcript database is large. Depending on your internet connection and the OneDrive interface, you may need to download it in batches or use the OneDrive desktop client for faster transfers.
 
