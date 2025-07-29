@@ -150,10 +150,6 @@ By downloading and using this dataset, you agree to:
 ## 🌐 Alternative Access
 If you cannot access the OneDrive link:
 - Contact the authors directly using the email addresses above.
-- Generate synthetic data for testing:
-```
-python create_synthetic_data.py
-```
 - Check repository issues for known access problems.
 
 **Download Link:** [PUT_YOUR_ONEDRIVE_LINK_HERE]  
