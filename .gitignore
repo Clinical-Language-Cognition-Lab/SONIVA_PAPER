@@ -123,16 +123,24 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Project specific
-results/
-data/
-*.xlsx
-*.xls
-*.csv
+# Project specific - Data Files
+# Note: Actual data is shared via OneDrive, not committed to git
+data/*.xlsx
+data/*.csv
+data/*.xls
+!data/.gitkeep
+!data/README.md
 *.h5
 *.hdf5
 *.pkl
 *.pickle
+
+# Specifically exclude data files (even if accidentally placed in root)
+acoustic_features_with_id.xlsx
+metadata.xlsx
+*_features_with_id.*
+patient_data.*
+real_data.*
 
 # PyTorch models
 *.pth
