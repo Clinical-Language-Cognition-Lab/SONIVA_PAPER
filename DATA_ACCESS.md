@@ -1,41 +1,48 @@
 # SONIVA Dataset Access
 
-## 📥 Quick Access
-The SONIVA acoustic features dataset is available for download via OneDrive:  
-**🔗 [Download SONIVA Dataset](PUT_YOUR_ONEDRIVE_LINK_HERE)**
+The SONIVA dataset is available in two complementary formats to support both acoustic classification and ASR experiments. All data is stored on OneDrive for controlled access.
 
 ---
 
-## What's Included
+## 📥 Quick Access
 
-- **acoustic_features_with_id.xlsx** – Main dataset
-  - Acoustic features extracted from speech samples
-  - Subject IDs for group-based cross-validation
-  - Control/Patient labels
-  - Ready for use with the analysis code
+- **[Download Acoustic Features & Metadata](PUT_ACOUSTIC_ONEDRIVE_LINK_HERE)**  
+  Includes `acoustic_features_with_id.xlsx` (openSMILE features), `metadata.xlsx` (feature descriptions), and `README_data.txt`.
 
-- **metadata.xlsx** – Dataset documentation
-  - Feature descriptions and units
-  - Data collection methodology
-  - Sample characteristics
-  - Quality control information
+- **[Download ASR Resources](PUT_ASR_ONEDRIVE_LINK_HERE)**  
+  Includes `.cha` transcripts (sentence-wise annotations, interviewer excluded) and the `whisper_finetuned_soniva.pth` model for ASR evaluation.
 
-- **README_data.txt** – Usage instructions
-  - File format specifications
-  - Loading instructions
-  - Citation requirements
+---
 
+## 📋 Dataset Contents
+
+### Acoustic Features (Classification)
+- **File:** `acoustic_features_with_id.xlsx`
+   - Columns: acoustic features, subject IDs, and labels (`Patient`/`Control`).
+
+- **File:** `metadata.xlsx`
+  - Acoustic feature descriptions, units, and extraction pipeline.
+
+---
+
+### ASR Data (Transcripts + Model)
+- **File:** `whisper_finetuned`
+  - Fine-tuned Whisper model for SONIVA transcripts.
+
+- **Folder:** `transcripts_cha/`
+  - `.cha` transcripts of patient and control speech.
+---
+
+## 🚀 How to Use
+- For **acoustic classification**, download the acoustic features and place them under `acoustic_classification/data/`.
+- For **ASR evaluation**, download the fine-tuned model and `.cha` transcripts, then follow `asr_whisper_finetuning/README_asr.md`.
 ---
 
 ## 📋 Dataset Specifications
 
 ### Data Structure
 - **Format:** Excel (.xlsx)
-- **Subjects:** [NUMBER] unique participants
-- **Samples:** [NUMBER] total speech samples
-- **Features:** [NUMBER] acoustic features
 - **Groups:** Control and Patient participants
-
 ### Feature Categories
 The dataset includes various acoustic measures extracted from openSMILE:
 - **Fundamental frequency:** Mean, standard deviation, range
@@ -51,63 +58,20 @@ The dataset includes various acoustic measures extracted from openSMILE:
 - Validated label consistency
 
 ---
-
-## 🚀 Quick Start
-
-1. Download the data from the OneDrive link above.
-2. Extract to your project's `data/` directory.
-3. Run the analysis:
-
-```bash
-# Test that data loads correctly
-python main.py --data_path data/acoustic_features_with_id.xlsx --model SVM --cv_folds 3
-
-# Full analysis with all models
-python main.py --data_path data/acoustic_features_with_id.xlsx --model all
-```
-
----
-
-## 📝 Usage Requirements
-
-### Citation
-When using this dataset, please cite our paper:
+## 📝 Citation
+When using any SONIVA dataset files, cite:
 ```bibtex
 @article{sanguedolce2025soniva,
-  ...
+  title={SONIVA: Speech recOgNItion Validation in Aphasia},
+  author={Sanguedolce, Giulia and Price, Cathy J. and Brook, Sophie and Gruia, Dragos C. and Parkinson, Niamh V. and Naylor, Patrick A. and Geranmayeh, Fatemeh},
+  journal={[Journal Name]},
+  year={2025},
+  doi={To be assigned}
 }
-```
 
 ### Data Attribution
 Please include the following acknowledgment in your work:
 > "Acoustic feature data used in this study was obtained from the SONIVA project (Sanguedolce et al., 2025), available at: [GitHub repository link]."
-
----
-
-## 🔧 Technical Notes
-
-### File Handling
-```python
-import pandas as pd
-
-# Load the dataset
-df = pd.read_excel('data/acoustic_features_with_id.xlsx')
-
-# Check data structure
-print(f"Shape: {df.shape}")
-print(f"Columns: {list(df.columns)}")
-print(f"Subjects: {df['ID'].nunique()}")
-```
-
-### Compatibility
-- **Python:** 3.8+ (tested with 3.8, 3.9, 3.10)
-- **Pandas:** ≥1.3.0
-- **Excel readers:** openpyxl, xlrd
-
-### Common Issues
-- **File path:** Ensure the Excel file is in the correct directory.
-- **Column names:** Feature names are case-sensitive.
-- **Missing data:** Contact authors if download is incomplete.
 
 ---
 
@@ -142,15 +106,10 @@ By downloading and using this dataset, you agree to:
 
 ### Updates
 - **Version:** 1.0 (Initial release)
-- **Last updated:** July 28, 2025
+- **Last updated:** July 29, 2025
 - **Update notifications:** Watch this repository for announcements.
 
 ---
-
-## 🌐 Alternative Access
-If you cannot access the OneDrive link:
-- Contact the authors directly using the email addresses above.
-- Check repository issues for known access problems.
 
 **Download Link:** [PUT_YOUR_ONEDRIVE_LINK_HERE]  
 **Repository:** https://github.com/Clinical-Language-Cognition-Lab/SONIVA_PAPER
