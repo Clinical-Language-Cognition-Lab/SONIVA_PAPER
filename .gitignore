@@ -175,3 +175,7 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# SONIVA-specific rules
+asr_whisper_finetuning/models/
+asr_whisper_finetuning/transcripts/
