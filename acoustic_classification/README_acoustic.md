@@ -1,23 +1,14 @@
-# SONIVA: Speech recOgNItion Validation in Aphasia
+# Acoustic Classification – SONIVA Project
 
-This repository contains the code for reproducing the results presented in **"SONIVA: Speech recOgNItion Validation in Aphasia"**. The code implements machine learning models (Support Vector Machine, Random Forest, and Neural Network) for classifying medical conditions based on acoustic features.
-
----
-
-## 📄 Paper Information
-**Title:** SONIVA: Speech recOgNItion Validation in Aphasia  
-**Authors:** Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Parkinson, Patrick A. Naylor, and Fatemeh Geranmayeh  
-**Journal/Conference:** –  
-**DOI:** –  
+This folder contains the code and resources for **acoustic feature-based classification** of aphasic vs. control speech segments from the SONIVA dataset. It includes machine learning models (**Support Vector Machine, Random Forest, Neural Network**) trained on openSMILE-extracted features.
 
 ---
 
 ## 📥 Dataset Access
-The SONIVA acoustic features dataset is available for download via OneDrive:  
-**[Download SONIVA Dataset](PUT_YOUR_ONEDRIVE_LINK_HERE)**  
+The acoustic features and metadata can be downloaded from OneDrive:  
+**[Download Acoustic Dataset](PUT_YOUR_ONEDRIVE_LINK_HERE)**  
 
-For details on dataset structure, metadata, and usage instructions, see **[DATA_ACCESS.md](DATA_ACCESS.md)**.
-
+Details about the dataset structure and usage are provided in **[DATA_ACCESS.md](../DATA_ACCESS.md)**.
 
 ---
 
@@ -25,203 +16,95 @@ For details on dataset structure, metadata, and usage instructions, see **[DATA_
 
 ### Prerequisites
 - Python 3.8 or higher
-- Required packages (see `requirements.txt`)
+- Dependencies listed in `requirements.txt`
 
 ### Installation
-
-**1. Clone this repository:**
-
-```bash
-    git clone https://github.com/Clinical-Language-Cognition-Lab/SONIVA_PAPER/acoustic-classification.git
-    cd acoustic-classification
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Clinical-Language-Cognition-Lab/SONIVA_PAPER.git  
+   cd SONIVA_PAPER/acoustic_classification
 ```
-
-**2. Create a virtual environment (recommended):**
-
+3. Create a virtual environment (recommended):
 ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python -m venv venv  
+   source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
-**3. Install dependencies:**
+4. Install dependencies:
 ```bash
-    pip install -r requirements.txt
+   pip install -r requirements.txt
 ```
-
-**4. Download the dataset from OneDrive and place it in the `data/` directory.**
+6. Place the dataset (`acoustic_features_with_id.xlsx`) in the `data/` directory.
 
 ---
 
-## Basic Usage
+## Running the Models
 
-**Run with a single model (SVM):**
+**Train a single model (e.g., SVM):**  
 ```bash
-    python main.py --data_path data/acoustic_features_with_id.xlsx --model SVM
+python main.py --data_path data/acoustic_features_with_id.xlsx --model SVM
 ```
-**Run all models:**
+**Train all models:**  
 ```bash
-    python main.py --data_path data/acoustic_features_with_id.xlsx --model all
+python main.py --data_path data/acoustic_features_with_id.xlsx --model all
 ```
+---
 
 ## 📊 Data Format
-The input data should be an Excel file with the following structure:
+Input data must be in Excel (.xlsx) format with the following structure:
 
+```bash
 | ID   | Feature1 | Feature2 | ... | FeatureN | Label   |
 |------|----------|----------|-----|----------|---------|
 | S001 | 0.123    | 0.456    | ... | 0.789    | Control |
-| S001 | 0.234    | 0.567    | ... | 0.890    | Control |
-| S002 | 0.345    | 0.678    | ... | 0.901    | Patient |
+| S002 | 0.234    | 0.567    | ... | 0.890    | Patient |
+```
 
-See **[DATA_ACCESS.md](DATA_ACCESS.md)** for full specifications.
-
-
-**Required columns:**
-- **ID:** Subject identifier (for group-based cross-validation)
-- **Label:** Class labels ('Control' or 'Patient')
-- **Feature columns:** Numeric acoustic features
-
-**Optional columns:**
-- **filename:** Automatically removed if present.
+- **ID:** Unique subject identifier (used for group-based cross-validation).  
+- **Label:** 'Control' or 'Patient'.  
+- **Features:** Numeric acoustic features.
 
 ---
 
 ## 🔧 Command Line Arguments
 ```bash
-usage: main.py [-h] --data_path DATA_PATH [--model {SVM,RF,NN,all}]
-                   [--output_dir OUTPUT_DIR] [--cv_folds CV_FOLDS]
-
-Required arguments:
---data_path DATA_PATH` – Path to the Excel data file
-
-Optional arguments:
---model {SVM,RF,NN,all}` – Model to train (default: SVM)
---output_dir OUTPUT_DIR` – Directory to save results (default: results)
---cv_folds CV_FOLDS` – Number of cross-validation folds (default: 9)
-
+usage: main.py [-h] --data_path DATA_PATH [--model {SVM,RF,NN,all}]  
+               [--output_dir OUTPUT_DIR] [--cv_folds CV_FOLDS]
 ```
+- `--data_path` : Path to the dataset Excel file.  
+- `--model` : Model to train (SVM, RF, NN, or all).  
+- `--output_dir` : Directory to save results (default: results/).  
+- `--cv_folds` : Number of cross-validation folds (default: 9).
+
+---
 
 ## 🧪 Methodology
-
-### Cross-Validation Strategy
-- **StratifiedGroupKFold:** Ensures subjects don't appear in both training and validation sets.
-- **SMOTE:** Applied to training data to handle class imbalance.
-- **9-fold cross-validation** (default).
-
-### Models Implemented
-1. **Support Vector Machine (SVM)**
-   - RBF kernel
-   - Probability estimates enabled
-   - Hyperparameters optimized for acoustic data
-
-2. **Random Forest (RF)**
-   - 200 estimators
-   - Balanced class weights
-   - Feature importance analysis
-
-3. **Neural Network (NN)**
-   - Architecture: Input → 128 → 64 → 1
-   - Batch normalization and layer normalization
-   - Dropout regularization (0.4)
-   - Focal loss with L1 regularization
-   - AdamW optimizer with learning rate scheduling
-
-### Feature Preprocessing
-- **MinMaxScaler:** Scales features to [0,1] range
-- Applied consistently across data splits
+- **Cross-Validation:** StratifiedGroupKFold ensures no subject overlap across folds.  
+- **SMOTE:** Applied to handle class imbalance.  
+- **Models:**  
+  - SVM (RBF kernel, probability estimates).  
+  - Random Forest (200 estimators, balanced class weights).  
+  - Neural Network (Input → 128 → 64 → 1) with focal loss, dropout (0.4), and AdamW optimization.  
+- **Preprocessing:** Features are scaled to `[0,1]` with MinMaxScaler.
 
 ---
 
-## 📊 Results and Outputs
+## 📊 Results
+Training results are saved in `results/`, including:
+- results_summary.json
+- experimental_setup.json
+- Confusion matrices (e.g., *_confusion_matrix.png)
+- Saved NN model (neural_network_model.pth)
 
-Each run creates a timestamped directory in `results/` containing:
-- `results_summary.json`: Complete results for all models
-- `experimental_setup.json`: Configuration and data split information
-- `*_confusion_matrix.png`: Confusion matrix visualizations
-- `neural_network_model.pth`: Saved neural network model (if NN is trained)
-
-**Example Results Structure:**
-```bash
-results/
-└── run\_20241201\_143052/
-├── results\_summary.json
-├── experimental\_setup.json
-├── support\_vector\_machine\_confusion\_matrix.png
-├── random\_forest\_confusion\_matrix.png
-├── neural\_network\_confusion\_matrix.png
-└── neural\_network\_model.pth
-
-```
+---
 
 ## 🔬 Reproducibility
-
-### Random Seed Control
-All random operations use seed 42 for reproducibility:
-- NumPy random operations
-- PyTorch random operations
-- Scikit-learn random operations
-- CUDA operations (if GPU available)
-
-### Environment Reproducibility
-We recommend using the exact package versions specified in `requirements.txt`. The code has been tested with:
-- Python 3.8, 3.9, 3.10
-- CUDA 11.x (optional, for GPU acceleration)
-
-### Hardware Requirements
-- **Minimum:** 4GB RAM, 2-core CPU
-- **Recommended:** 8GB RAM, 4-core CPU
-- **GPU:** Optional (CUDA-compatible for neural networks)
-
-
-## 📝 Example Usage
-
-```bash
-
-    # Train all models with 5-fold CV
-    python main.py \
-        --data_path data/acoustic_features_with_id.xlsx \
-        --model all \
-        --cv_folds 5 \
-        --output_dir my_experiment
-
-    # Train only SVM with custom output directory
-    python main.py \
-        --data_path data/acoustic_features_with_id.xlsx \
-        --model SVM \
-        --output_dir svm_results
-```
-
-## 🤛 Troubleshooting
-
-
-### Data Issues
-- Ensure all feature columns are numeric.
-- Check for missing values in the dataset or NaNs.
-- Verify that 'Label' column contains only 'Control' and 'Patient' values.
-
-
----
-
-## 📚 Citation
-If you use this code or dataset in your research, please cite our paper:
-```bibtex
-@article{sanguedolce2025soniva,
-  ...
-}
-```
----
-
-## 🙏 Acknowledgments
-- [Funding sources]
-- [Collaborators]
+- Random seed fixed (42) across NumPy, PyTorch, and scikit-learn.
+- Tested with Python 3.8–3.10.
 
 ---
 
 ## 📞 Contact
-For questions about this code or paper:
-- **First Author:** gs2022@ic.ac.uk
-- **Corresponding Author:** fatemeh.geranmayeh00@imperial.ac.uk
-- **Issues:** Please use GitHub Issues for technical problems
+- **First Author:** gs2022@ic.ac.uk  
+- **Corresponding Author:** fatemeh.geranmayeh00@imperial.ac.uk  
+- **Issues:** Use GitHub Issues for technical questions.
 
----
-
-**Last Updated:** 28/07/2025  
-**Version:** 1.0.0
