@@ -1,14 +1,14 @@
 """
-Acoustic Feature Classification for Medical Diagnosis
-====================================================
+SONIVA – Acoustic Feature Classification
+========================================
+This script implements SVM, Random Forest, and Neural Network models 
+to classify aphasic vs. control speech segments using openSMILE-extracted acoustic features.
 
-This script implements machine learning models (SVM, Random Forest, Neural Network) 
-for classifying post-stroke conditions based on acoustic features from openSMILE.
+First Author: Giulia Sanguedolce
+Paper: SONIVA: Speech recOgNItion Validation in Aphasia
+Date: 29/07/2025
+"""
 
-First Author: [Giulia Sanguedolce]
-Paper: [SONIVA: Speech recOgNItion Validation in
-Aphasia]
-Date: [29/07/2025]
 
 Dependencies:
 - pandas>=1.3.0
@@ -29,9 +29,7 @@ import torch.optim as optim
 import matplotlib.pyplot as plt
 import seaborn as sns
 from torch.utils.data import DataLoader, TensorDataset
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, balanced_accuracy_score
@@ -440,7 +438,8 @@ def main():
         '--data_path', 
         type=str, 
         required=True,
-        help='Path to the Excel data file'
+        default='data/acoustic_features_with_id.xlsx',
+        help='Path to the Excel data file (default: data/acoustic_features_with_id.xlsx)'
     )
     parser.add_argument(
         '--model', 
@@ -483,6 +482,10 @@ def main():
     y_train, y_test = y[train_idx], y[test_idx]
     groups_train = groups.iloc[train_idx]
     groups_test = groups.iloc[test_idx]
+
+    # Save train and test subject IDs
+    np.savetxt(os.path.join(output_dir, 'train_subjects.txt'), groups_train.unique(), fmt='%s')
+    np.savetxt(os.path.join(output_dir, 'test_subjects.txt'), groups_test.unique(), fmt='%s')
     
     # Print data split information
     print(f"\n{'='*50}")
@@ -562,7 +565,9 @@ def main():
         'test_samples': len(X_test),
         'train_subjects': len(groups_train.unique()),
         'test_subjects': len(groups_test.unique()),
-        'timestamp': timestamp
+        'timestamp': timestamp,
+        'train_subject_ids': list(groups_train.unique()),
+        'test_subject_ids': list(groups_test.unique())
     }
     
     setup_file = os.path.join(output_dir, 'experimental_setup.json')
