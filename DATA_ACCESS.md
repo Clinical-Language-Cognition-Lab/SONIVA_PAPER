@@ -6,22 +6,19 @@ The SONIVA dataset is available in two complementary formats to support both aco
 
 ## 📥 Quick Access
 
-- **[Download Acoustic Features & Metadata](PUT_ACOUSTIC_ONEDRIVE_LINK_HERE)**  
-  Includes `acoustic_features_with_id.xlsx` (openSMILE features), `metadata.xlsx` (feature descriptions), and `README_data.txt`.
-
-- **[Download ASR Resources](PUT_ASR_ONEDRIVE_LINK_HERE)**  
-  Includes `.cha` transcripts (sentence-wise annotations, interviewer excluded) and the `whisper_finetuned_soniva.pth` model for ASR evaluation.
+All SONIVA resources are available in a single OneDrive directory:  
+**[🔗 Download SONIVA Data and Models](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true)**
 
 ---
 
 ## 📋 Dataset Contents
 
 ### Acoustic Features (Classification)
-- **File:** `acoustic_features_with_id.xlsx`
+- **File:** `acoustic_features_with_id.xlsx` (openSMILE features)
    - Columns: acoustic features, subject IDs, and labels (`Patient`/`Control`).
 
 - **File:** `metadata.xlsx`
-  - Acoustic feature descriptions, units, and extraction pipeline.
+  - Demographics and clinical information divided by database source (IC3/PLORAS).
 
 ---
 
@@ -35,7 +32,7 @@ The SONIVA dataset is available in two complementary formats to support both aco
 
 ## 🚀 How to Use
 - For **acoustic classification**, download the acoustic features and place them under `acoustic_classification/data/`.
-- For **ASR evaluation**, download the fine-tuned model and `.cha` transcripts, then follow `asr_whisper_finetuning/README_asr.md`.
+- For **ASR evaluation**, download the fine-tuned model then follow `asr_whisper_finetuning/README_asr.md`.
 ---
 
 ## 📋 Dataset Specifications
