@@ -111,7 +111,7 @@ Optional arguments:
 
 ### Feature Preprocessing
 - **MinMaxScaler:** Scales features to [0,1] range
-- Applied consistently across train/validation/test splits
+- Applied consistently across data splits
 
 ---
 
