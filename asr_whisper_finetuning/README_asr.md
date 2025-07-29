@@ -12,12 +12,14 @@ This folder contains resources and instructions for using the **fine-tuned Whisp
 
 ---
 
-## 📥 Download the Fine-Tuned Model
+## 📥 Download the Fine-Tuned Model (Manual)
 The fine-tuned Whisper model is hosted on OneDrive:
 
 **🔗 [Download Whisper Medium – SONIVA Fine-Tuned Model](PUT_YOUR_ONEDRIVE_LINK_HERE)**
 
-After downloading, place the model directory inside:
+**Manual Step Required:**  
+Due to its large size, you must **manually download and extract** the model folder.  
+Once downloaded, place it in the following path:  
 ```bash
 `asr_whisper_finetuning/models/whisper_soniva/`
 ```
@@ -31,8 +33,8 @@ To test the fine-tuned model on your own `.wav` files, use the provided `test_as
 - Recommended sample rate: **16 kHz** (the script automatically resamples).
 
 ### **Step 2: Run Transcription**
-Run the script for a **directory of audio files**:
-```bahs
+For a **directory of audio files**:
+```bash
 `python test_asr.py --model_path asr_whisper_finetuning/models/whisper_soniva --audio_dir path/to/wavs/ --output_file my_transcriptions.json`
 ```
 
@@ -67,35 +69,13 @@ model, processor = WhisperForConditionalGeneration, WhisperProcessor
    Transcriptions are stored in a `.json` file.
 
 ---
-
 ## 📊 Word Error Rate (WER) Evaluation (Optional)
-If you have **reference transcripts**, you can compute WER using the Hugging Face `evaluate` library.
+If you have **reference transcripts**, you can compute WER using your preferred method.  
+Before evaluation, ensure that you clean the transcriptions (e.g., **remove empty strings**, normalize casing and punctuation) to obtain accurate metrics.
 
-### Example:
-```python
-import evaluate
-import json
+Proceed with your normal WER calculation pipeline using the predicted `.json` file and your reference transcripts.
 
-# Load the WER metric
-wer = evaluate.load("wer")
-
-# Load your predicted transcriptions
-with open("my_transcriptions.json") as f:
-    preds = json.load(f)
-
-# Example reference transcripts (dict format: filename -> transcript)
-references = {
-    "file1.wav": "this is the correct transcript",
-    "file2.wav": "another reference transcript"
-}
-
-# Align predictions and references
-pred_texts = [preds[k] for k in references.keys()]
-ref_texts = [references[k] for k in references.keys()]
-
-# Compute WER
-print("WER:", wer.compute(predictions=pred_texts, references=ref_texts))
-```
+---
 
 ## 📂 Folder Structure
 ```bash
