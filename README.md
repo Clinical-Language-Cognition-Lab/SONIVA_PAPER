@@ -14,7 +14,7 @@ We release a **fine-tuned Whisper ASR model** trained on sentence-wise `.cha` tr
 
 ## 📥 Data Access
 
-All SONIVA datasets (acoustic features, metadata, ASR model, and transcripts) are hosted together on **OneDrive** for secure sharing:
+All SONIVA datasets (acoustic features, metadata, ASR model, and transcripts) are hosted together:
 
 **[🔗 Download SONIVA Data and Models](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)**
 
