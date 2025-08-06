@@ -6,13 +6,13 @@ The dataset is **not included** in the repository due to size and privacy constr
 ---
 
 ## 📥 Download the Dataset
-The SONIVA dataset (acoustic features and metadata) is available via OneDrive:  
-**[Download SONIVA Dataset](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true)**
+The SONIVA dataset (acoustic features and metadata) is available via the Drive:  
+**[Download SONIVA Dataset](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)**
 
 ---
 
 ## Preparation Steps
-1. Download the dataset from the OneDrive link above.
+1. Download the dataset from the Drive link above.
 2. Place the following files into this `data/` directory:
    - `acoustic_features_with_id.xlsx` (main dataset)
    - `metadata.xlsx` (dataset documentation)
