@@ -91,11 +91,7 @@ asr_whisper_finetuning/
 If you use this ASR model, please cite:
 ```bibtex
 @article{sanguedolce2025soniva,
-title={SONIVA: Speech recOgNItion Validation in Aphasia},
-author={Sanguedolce, Giulia and Price, Cathy J. and Brook, Sophie and Gruia, Dragos C. and Parkinson, Niamh V. and Naylor, Patrick A. and Geranmayeh, Fatemeh},
-journal={[Journal Name]},
-year={2025},
-doi={To be assigned}
+...
 }
 ```
 ---
