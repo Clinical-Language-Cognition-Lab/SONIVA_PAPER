@@ -18,7 +18,7 @@ All SONIVA datasets (acoustic features, metadata, ASR model, and transcripts) ar
 
 **[🔗 Download SONIVA Data and Models](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)**
 
-The OneDrive package includes:
+The folder includes:
 - `acoustic_features_with_id.xlsx` – Extracted acoustic features with subject IDs and labels.  
 - `metadata.xlsx` – Clinical and demographic metadata (IC3 and PLORAS columns).  
 - `.cha` transcript files – Orthographic and phonetic transcripts for ASR benchmarking.  
@@ -35,7 +35,7 @@ SONIVA_PAPER/
 │ ├── requirements.txt
 │ ├── README_acoustic.md
 │ └── data/
-│ └── README.md # Points to OneDrive dataset
+│ └── README.md # Points to the dataset
 │
 ├── asr_whisper_finetuning/ # Whisper ASR fine-tuning + transcripts (Experiment 2)
 │ ├── README_asr.md
@@ -59,7 +59,7 @@ SONIVA_PAPER/
 ## 🚀 Quick Start
 
 ### Acoustic Classification
-1. Download the acoustic features from OneDrive and place them in `acoustic_classification/data/`.
+1. Download the acoustic features from the Drive and place them in `acoustic_classification/data/`.
 2. Install dependencies and run:
    ```bash
    cd acoustic_classification
@@ -69,7 +69,7 @@ SONIVA_PAPER/
 
 ## ASR Whisper Fine-Tuning
 
-1. **Download the fine-tuned Whisper model and `.cha` transcripts** from OneDrive:  
+1. **Download the fine-tuned Whisper model and `.cha` transcripts** from the Drive:  
    [🔗 Download ASR Model + Transcripts](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)
 
 2. **Follow the detailed instructions** provided in [README_asr.md](asr_whisper_finetuning/README_asr.md).
