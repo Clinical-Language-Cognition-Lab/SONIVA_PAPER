@@ -7,7 +7,7 @@ The SONIVA dataset is available in two complementary formats to support both aco
 ## 📥 Quick Access
 
 All SONIVA resources are available in a single OneDrive directory:  
-**[🔗 Download SONIVA Data and Models](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true)**
+**[🔗 Download SONIVA Data and Models]([https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing))**
 
 ---
 
@@ -109,6 +109,6 @@ By downloading and using this dataset, you agree to:
 
 ---
 
-**Full Download Link:** [HERE](https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true) 
+**Full Download Link:** [HERE]([https://imperiallondon-my.sharepoint.com/shared?id=%2Fpersonal%2Ffg00%5Fic%5Fac%5Fuk%2FDocuments%2FSpeech%5FRecognition%5Fshared%2FSONIVA%2F%280%29%20SONIVA%5FFor%5FPublication%20%28GIULIA%29%2FSONIVA%5FPAPER&sortField=LinkFilename&isAscending=true](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)) 
 
 **Full Repository Link:** https://github.com/Clinical-Language-Cognition-Lab/SONIVA_PAPER
