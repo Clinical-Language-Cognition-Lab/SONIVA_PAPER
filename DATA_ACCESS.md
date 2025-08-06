@@ -1,12 +1,12 @@
 # SONIVA Dataset Access
 
-The SONIVA dataset is available in two complementary formats to support both acoustic classification and ASR experiments. All data is stored on OneDrive for controlled access.
+The SONIVA dataset is available in two complementary formats to support both acoustic classification and ASR experiments. All data is stored on the Drive for controlled access.
 
 ---
 
 ## 📥 Quick Access
 
-All SONIVA resources are available in a single OneDrive directory:  
+All SONIVA resources are available in a single directory:  
 **[🔗 Download SONIVA Data and Models](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)**
 
 ---
