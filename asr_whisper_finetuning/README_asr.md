@@ -13,7 +13,7 @@ This folder contains resources and instructions for using the **fine-tuned Whisp
 ---
 
 ## 📥 Download the Fine-Tuned Model (Manual)
-The fine-tuned Whisper model is hosted on OneDrive:
+The fine-tuned Whisper model is hosted on the Drive:
 
 **🔗 [Download Whisper Medium – SONIVA Fine-Tuned Model](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)**
 
@@ -83,8 +83,7 @@ asr_whisper_finetuning/
 │
 ├── README_asr.md # Documentation for ASR model usage
 ├── test_asr.py # Script to test the fine-tuned model
-├── download_model.sh # Helper script to download model from OneDrive
-└── transcripts/ # .cha transcripts for benchmarking
+└── download_model.sh # Helper script to download model from the Drive
 ```
 
 ## 📚 Citation
