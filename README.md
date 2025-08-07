@@ -32,7 +32,7 @@ While acoustic features and transcripts are **openly available**, access to the 
 
 To request access to the audio:
 
-1. Download and review the [**SONIVA Data Usage Agreement (DUA)**](./DATA_USAGE_AGREEMENT_AUDIO.pdf)
+1. Download and review the [**SONIVA Data Usage Agreement (DUA)**](./DATA_USAGE_AGREEMENT_AUDIO.docx)
 2. Sign the agreement and email it to **fatemeh.geranmayeh00@imperial.ac.uk** with:
    - Your institutional affiliation
    - A brief description of your intended research use
@@ -63,7 +63,7 @@ SONIVA_PAPER/
 │ └── README.md # Points to CHA files
 │
 ├── DATA_ACCESS.md
-├── DATA_USAGE_AGREEMENT_AUDIO.pdf
+├── DATA_USAGE_AGREEMENT_AUDIO.docx
 ├── README.md # This file
 ├── setup.sh
 ├── .gitignore
