@@ -26,6 +26,25 @@ The folder includes:
 
 ---
 
+## 🔐 Audio Data Access Policy (Controlled)
+
+While acoustic features and transcripts are **openly available**, access to the **raw audio recordings** is restricted due to GDPR and ethical regulations. The audio files contain **biometric data (voice)** and are considered potentially re-identifiable.
+
+To request access to the audio:
+
+1. Download and review the [**SONIVA Data Usage Agreement (DUA)**](./DATA_USAGE_AGREEMENT_AUDIO.pdf)
+2. Sign the agreement and email it to **fatemeh.geranmayeh00@imperial.ac.uk** with:
+   - Your institutional affiliation
+   - A brief description of your intended research use
+   - A valid **Good Clinical Practice (GCP)** training certificate 
+
+Upon approval, secure access to the audio folder will be granted via the Drive.
+
+Please note that access is limited to researchers affiliated with academic or healthcare institutions, and all use must comply with the conditions outlined in the DUA.
+
+---
+
+
 ## 📂 Repository Structure
 
 ```bash
@@ -44,6 +63,7 @@ SONIVA_PAPER/
 │ └── README.md # Points to CHA files
 │
 ├── DATA_ACCESS.md
+├── DATA_USAGE_AGREEMENT_AUDIO.pdf
 ├── README.md # This file
 ├── setup.sh
 ├── .gitignore
