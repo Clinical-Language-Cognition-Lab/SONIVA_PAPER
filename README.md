@@ -103,6 +103,29 @@ If you use this code or dataset in your research, please cite our paper:
 }
 ```
 ---
+---
+
+## 📄 License
+
+This repository is made available under the following licensing terms:
+
+### 🔹 Code
+All code in this repository is released under the [MIT License](https://opensource.org/licenses/MIT), a permissive open-source license that allows reuse, modification, and redistribution with proper attribution.
+
+> © 2025 Imperial College London & Contributors. 
+
+### 🔹 Data (Transcripts, Metadata, Acoustic Features, Fine-Tuned Models)
+All non-audio data files are released under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. 
+
+
+### 🔒 Audio Recordings
+The raw speech recordings are **not licensed for public use** due to GDPR and ethical restrictions, as they contain **biometric and potentially re-identifiable information**. Access is governed via a **Data Usage Agreement (DUA)**:
+
+- Download and review the DUA [here](./DATA_USAGE_AGREEMENT_AUDIO.docx)
+- Submit the signed DUA and GCP certificate to: **fatemeh.geranmayeh00@imperial.ac.uk**
+- Access is restricted to researchers at academic or clinical institutions.
+
+---
 
 ## 🙏 Acknowledgments
 - [Funding sources]
