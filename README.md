@@ -110,8 +110,7 @@ If you use this code or dataset in your research, please cite our paper:
 This repository is made available under the following licensing terms:
 
 ### 🔹 Code
-All code in this repository is released under the [MIT License](https://opensource.org/licenses/MIT), a permissive open-source license that allows reuse, modification, and redistribution with proper attribution.
-
+All code in this repository is released under the [MIT License](https://opensource.org/licenses/MIT)
 > © 2025 Imperial College London & Contributors. 
 
 ### 🔹 Data (Transcripts, Metadata, Acoustic Features, Fine-Tuned Models)
