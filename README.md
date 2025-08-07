@@ -1,5 +1,8 @@
 # SONIVA: Speech recOgNItion Validation in Aphasia
 
+Authors:
+Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Parkinson4, Patrick A. Naylor and Fatemeh Geranmayeh
+
 This repository contains the code, models, and data developed for the **SONIVA project**.  
 It includes **two main components**:
 
@@ -109,15 +112,15 @@ If you use this code or dataset in your research, please cite our paper:
 
 This repository is made available under the following licensing terms:
 
-### 🔹 Code
+### Code
 All code in this repository is released under the [MIT License](https://opensource.org/licenses/MIT)
 > © 2025 Imperial College London & Contributors. 
 
-### 🔹 Data (Transcripts, Metadata, Acoustic Features, Fine-Tuned Models)
+### Data (Transcripts, Metadata, Acoustic Features, Fine-Tuned Models)
 All non-audio data files are released under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. 
 
 
-### 🔒 Audio Recordings
+### Audio Recordings
 The raw speech recordings are **not licensed for public use** due to GDPR and ethical restrictions, as they contain **biometric and potentially re-identifiable information**. Access is governed via a **Data Usage Agreement (DUA)**:
 
 - Download and review the DUA [here](./DATA_USAGE_AGREEMENT_AUDIO.docx)
@@ -126,9 +129,9 @@ The raw speech recordings are **not licensed for public use** due to GDPR and et
 
 ---
 
-## 🙏 Acknowledgments
-- [Funding sources]
-- [Collaborators]
+## Acknowledgments
+- Funding support was provided to G.S. (UK Research and Innovation [UKRI Centre for Doctoral Training in AI for Healthcare:EP/S023283/1]), F.G. (Medical Research Council P79100) and S.B. (EPSRC IAA -PSP415 and MRC IAA -PSP518)
+- The authors would like to thank A. Coghlan, O. Burton and N. Parkinson for assistance with the IC3 study, and J. Friedland, K. Stephenson, G. Gvero, Z. Zaskorska and C. Leong for labelling the speech data. We are grateful to the patients, clinical teams, and the PLORAS team for their valuable contributions to the SONIVA database. Infrastructure support was provided by the NIHR Imperial Biomedical Research Centre and the NIHR Imperial Clinical Research Facility. The views expressed are those of the authors and not necessarily those of the NHS, the NIHR or the Department of Health and Social Care.
 
 ---
 
@@ -140,7 +143,6 @@ For questions about this code or paper:
 
 ---
 
-**Last Updated:** 29/07/2025  
-**Version:** 1.0.0
+**Last Updated:** 07/08/2025  
 
 
