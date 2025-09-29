@@ -1,7 +1,7 @@
 # SONIVA: Speech recOgNItion Validation in Aphasia
 
 Authors:
-Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Parkinson4, Patrick A. Naylor and Fatemeh Geranmayeh
+Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Parkinson, Patrick A. Naylor and Fatemeh Geranmayeh
 
 This repository contains the code, models, and data developed for the **SONIVA project**.  
 It includes **two main components**:
