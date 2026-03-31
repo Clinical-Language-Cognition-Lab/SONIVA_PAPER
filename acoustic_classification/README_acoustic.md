@@ -1,4 +1,4 @@
-# Acoustic Classification – SONIVA Project
+# Acoustic Features – SONIVA
 
 This folder contains the acoustic feature set used for the classification of aphasic vs. control speech segments in the SONIVA dataset.
 
@@ -42,6 +42,24 @@ The acoustic feature file is provided in Excel (`.xlsx`) format with the followi
 * **ID**: Unique subject identifier (used for group-based evaluation)
 * **Label**: `Control` or `Patient`
 * **Features**: Numeric acoustic features extracted from speech
+
+---
+
+## 📊 Train/Test Split Summary
+
+The dataset is split into training and test sets at the participant level. Such train/test split reflects the distribution used in the experiments reported in the paper.
+
+### Train set
+- Patients: 514 (Mean age: 60.37 ± 12.86, 68.48% male)
+- Controls: 92 (Mean age: 59.71 ± 11.50, 46.74% male)
+- Total: 606 participants
+
+### Test set
+- Patients: 57 (Mean age: 62.46 ± 13.41, 71.93% male)
+- Controls: 11 (Mean age: 59.14 ± 11.98, 36.36% male)
+- Total: 68 participants
+
+*Note: Demographics are computed per unique participant. Counts refer to unique individuals.*
 
 ---
 
