@@ -131,7 +131,7 @@ A Data Usage Agreement (DUA) is provided in this repository and must be complete
 SONIVA_PAPER/
 │
 ├── acoustic_features/       # Acoustic feature dataset
-├── ASR_finetuned/           # Fine-tuned Whisper model (split, LFS)
+├── ASR_finetuned/           # Fine-tuned Whisper model
 ├── .gitattributes           # Git LFS configuration
 ├── .gitignore
 └── README.md
