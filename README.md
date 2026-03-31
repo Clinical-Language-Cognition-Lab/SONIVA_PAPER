@@ -57,7 +57,7 @@ The `ASR_finetuned/` folder contains:
 * Stored as split archive parts due to GitHub file size limits
 * A lightweight inference script (`test_asr.py`)
 
-This enables evaluation of **automatic speech recognition (ASR)** on post-stroke speech.
+This enables evaluation of **automatic speech recognition (ASR)** on impaired speech.
 
 ---
 
