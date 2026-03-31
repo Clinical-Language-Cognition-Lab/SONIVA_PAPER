@@ -5,7 +5,7 @@ Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Park
 
 ---
 
-This repository provides resources developed for the **SONIVA project**, including:
+This repository provides resources developed for the **SONIVA database**, including:
 
 * Acoustic features for downstream analyses
 * A fine-tuned Whisper ASR model
