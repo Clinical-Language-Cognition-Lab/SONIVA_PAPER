@@ -1,148 +1,180 @@
 # SONIVA: Speech recOgNItion Validation in Aphasia
 
-Authors:
-Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Parkinson, Patrick A. Naylor and Fatemeh Geranmayeh
-
-This repository contains the code, models, and data developed for the **SONIVA project**.  
-It includes **two main components**:
-
-### 1. Acoustic Classification
-We provide openSMILE-extracted acoustic features, along with machine learning models — **Support Vector Machine (SVM)**, **Random Forest (RF)**, and a **Neural Network (NN)** using focal loss and dropout regularization. These models are trained to classify speech segments as either **post-stroke (Patient)** or **healthy (Control)**, demonstrating the potential of acoustic biomarkers in clinical classification.
-
-### 2. ASR Whisper Fine-Tuning
-We release a **fine-tuned Whisper ASR model** trained on sentence-wise `.cha` transcripts derived from SONIVA recordings. These transcripts (but not raw audio) are included for benchmarking and adaptation, enabling the evaluation of **Word Error Rate (WER)** on post-stroke speech and supporting further research on clinical ASR performance.
+**Authors:**
+Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Parkinson, Patrick A. Naylor, Fatemeh Geranmayeh
 
 ---
 
+This repository provides resources developed for the **SONIVA database**, including:
 
-## 📥 Data Access
+* Acoustic features for downstream analyses
+* A fine-tuned Whisper ASR model
 
-All SONIVA datasets (acoustic features, metadata, ASR model, and transcripts) are hosted together:
-
-**[🔗 Download SONIVA Data and Models](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)**
-
-The folder includes:
-- `acoustic_features_with_id.xlsx` – Extracted acoustic features with subject IDs and labels.  
-- `metadata.xlsx` – Clinical and demographic metadata (IC3 and PLORAS columns).  
-- `.cha` transcript files – Orthographic and phonetic transcripts for ASR benchmarking.  
-- Fine-tuned Whisper Medium model – Fully trained ASR model ready for testing.
+The repository is designed as a **data and model release**, with a focus on transparency and reproducibility.
 
 ---
 
-## 🔐 Audio Data Access Policy (Controlled)
+## 📦 Repository Components
 
-While acoustic features and transcripts are **openly available**, access to the **raw audio recordings** is restricted due to GDPR and ethical regulations. The audio files contain **biometric data (voice)** and are considered potentially re-identifiable.
+### 1. Acoustic Features
 
-To request access to the audio:
+The `acoustic_features/` folder contains:
 
-1. Download and review the [**SONIVA Data Usage Agreement (DUA)**](./DATA_USAGE_AGREEMENT_AUDIO.docx)
-2. Sign the agreement and email it to **fatemeh.geranmayeh00@imperial.ac.uk** with:
-   - Your institutional affiliation
-   - A brief description of your intended research use
-   - A valid **Good Clinical Practice (GCP)** training certificate 
+* Precomputed acoustic feature matrices (train/test splits used in the paper)
+* Features extracted using openSMILE from segmented speech
 
-Upon approval, secure access to the audio folder will be granted via the Drive.
+These features can be used for **classification tasks of the user's choice** or to support broader research pipelines, including studies aligned with the transcripts available via the Helix repository.
 
-Please note that access is limited to researchers affiliated with academic or healthcare institutions, and all use must comply with the conditions outlined in the DUA.
+#### Data Structure
+
+* **Format:** Excel (.xlsx)
+* **Groups:** Control and Patient participants
+
+#### Feature Categories
+
+The dataset includes various acoustic measures extracted using openSMILE:
+
+* Fundamental frequency: Mean, standard deviation, range
+* Formant frequencies: F1, F2, F3 characteristics
+* Spectral features: Centroid, bandwidth, rolloff
+* Voice quality: Jitter, shimmer, harmonics-to-noise ratio
+* Prosodic measures: Intensity, duration, pause characteristics
+* Cepstral features: MFCC coefficients
+
+#### Data Quality
+
+* All features are numeric (float values)
+* Standardized subject ID format
+* Validated label consistency
 
 ---
 
+### 2. ASR Fine-Tuned Model
+
+The `ASR_finetuned/` folder contains:
+
+* A fine-tuned Whisper Medium model
+* Stored as split archive parts due to GitHub file size limits
+* A lightweight inference script (`test_asr.py`)
+
+This enables evaluation of **automatic speech recognition (ASR)** on impaired speech.
+
+---
+
+## 📊 Data Access
+
+The SONIVA database is distributed across this repository and an external open-access archive.
+
+### Open Access (Helix Repository)
+
+Metadata and transcripts are publicly available via:
+
+DOI: [https://doi.org/10.82186/ra9dv-4az59](https://doi.org/10.82186/ra9dv-4az59)
+
+This includes:
+
+* Participant metadata
+* Orthographic transcripts (.cha format)
+
+---
+
+### 🔐 Audio Data Access (Controlled)
+
+Additionally, SONIVA contains matched audio recordings from which the transcriptions are derived. Nevertheless, due to the sensitivity of the speech audio data, these files are not suitable for public sharing and are available upon request only. Imperial will review individual data access requests and will execute appropriate institutional data sharing agreements depending on the legal status and location of the data requestor.
+
+The following conditions must be met:
+
+i) The academic requester should have appropriate ethical clearance according to their local regulations
+
+ii) The data must be stored in a secure academic research environment
+
+iii) There should be no attempt to re-identify participants
+
+iv) In the unlikely event that a participant is identified through the audio recordings, the data controller must be informed
+
+To request access, please contact:
+
+**[fatemeh.geranmayeh00@imperial.ac.uk](mailto:fatemeh.geranmayeh00@imperial.ac.uk)**
+
+A Data Usage Agreement (DUA) is provided in this repository and must be completed as part of the request process.
+
+---
+
+## 🧪 Methodological Overview
+
+### Acoustic Features
+
+* Extracted using openSMILE (e.g., eGeMAPS configuration)
+* Derived from **utterance-level segmentation** aligned with CHAT (.cha) transcripts
+* Interviewer speech removed to retain only participant speech
+
+### ASR Model
+
+* Based on Whisper Medium (OpenAI)
+* Fully fine-tuned (encoder + decoder)
+* Trained on SONIVA audios and transcripts
+
+---
 
 ## 📂 Repository Structure
 
-```bash
+```text
 SONIVA_PAPER/
-├── acoustic_classification/ # Acoustic feature classification (Experiment 1)
-│ ├── main.py
-│ ├── requirements.txt
-│ ├── README_acoustic.md
-│ └── data/
-│ └── README.md # Points to the dataset
 │
-├── asr_whisper_finetuning/ # Whisper ASR fine-tuning + transcripts (Experiment 2)
-│ ├── README_asr.md
-│ ├── download_model.sh
-│ └── transcripts/
-│ └── README.md # Points to CHA files
-│
-├── DATA_ACCESS.md
-├── DATA_USAGE_AGREEMENT_AUDIO.docx
-├── README.md # This file
-├── setup.sh
+├── acoustic_features/       # Acoustic feature dataset
+├── ASR_finetuned/           # Fine-tuned Whisper model
+├── .gitattributes           # Git LFS configuration
 ├── .gitignore
-└── .github/
-└── workflows/
-└── test.yml
-
+└── README.md
 ```
-
 
 ---
 
-## 🚀 Quick Start
-
-### Acoustic Classification
-1. Download the acoustic features from the Drive and place them in `acoustic_classification/data/`.
-2. Install dependencies and run:
-   ```bash
-   cd acoustic_classification
-   pip install -r requirements.txt
-   python main.py --data_path data/acoustic_features_with_id.xlsx --model all
-   ```
-
-## ASR Whisper Fine-Tuning
-
-1. **Download the fine-tuned Whisper model and `.cha` transcripts** from the Drive:  
-   [🔗 Download ASR Model + Transcripts](https://drive.google.com/drive/folders/1lqyKebne8jIBaTeD9MjTh6M2Kf5hsbVW?usp=sharing)
-
-2. **Follow the detailed instructions** provided in [README_asr.md](asr_whisper_finetuning/README_asr.md).
-
-
 ## 📚 Citation
-If you use this code or dataset in your research, please cite our paper:
+
+If you use this repository or dataset, please cite:
+
 ```bibtex
 @article{sanguedolce2025soniva,
   ...
 }
 ```
----
 
+---
 
 ## 📄 License
 
-This repository is made available under the following licensing terms:
-
 ### Code
-All code in this repository is released under the [MIT License](https://opensource.org/licenses/MIT)
-> © 2025 Imperial College London & Contributors. 
+All code in this repository is released under the MIT License.
 
-### Data (Transcripts, Metadata, Acoustic Features, Fine-Tuned Models)
-All non-audio data files are released under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. 
+### Data (Non-Audio)
+All non-audio data, including:
+- acoustic features  
+- transcripts  
+- metadata  
+- fine-tuned ASR model  
 
+are released under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
 
-### Audio Recordings
-The raw speech recordings are **not licensed for public use** due to GDPR and ethical restrictions, as they contain **biometric and potentially re-identifiable information**. Access is governed via a **Data Usage Agreement (DUA)**:
+### Audio Data
+The raw speech recordings are **not publicly distributed** due to ethical and data protection constraints, as they contain biometric and potentially identifiable information.
 
-- Download and review the DUA [here](./DATA_USAGE_AGREEMENT_AUDIO.docx)
-- Submit the signed DUA and GCP certificate to: **fatemeh.geranmayeh00@imperial.ac.uk**
-- Access is restricted to researchers at academic or clinical institutions.
+Access to the audio data is provided **upon request only**, subject to:
+- approval by the data controllers  
+- completion of a Data Usage Agreement (DUA)  
+- compliance with institutional and legal requirements  
 
----
-
-## Acknowledgments
-- Funding support was provided to G.S. (UK Research and Innovation [UKRI Centre for Doctoral Training in AI for Healthcare:EP/S023283/1]), F.G. (Medical Research Council P79100) and S.B. (EPSRC IAA -PSP415 and MRC IAA -PSP518)
-- The authors would like to thank A. Coghlan, O. Burton and N. Parkinson for assistance with the IC3 study, and J. Friedland, K. Stephenson, G. Gvero, Z. Zaskorska and C. Leong for labelling the speech data. We are grateful to the patients, clinical teams, and the PLORAS team for their valuable contributions to the SONIVA database. Infrastructure support was provided by the NIHR Imperial Biomedical Research Centre and the NIHR Imperial Clinical Research Facility. The views expressed are those of the authors and not necessarily those of the NHS, the NIHR or the Department of Health and Social Care.
-
+See the Data Access section for details on how to request access.
 ---
 
 ## 📞 Contact
-For questions about this code or paper:
-- **First Author:** gs2022@ic.ac.uk
-- **Corresponding Author:** fatemeh.geranmayeh00@imperial.ac.uk
-- **Issues:** Please use GitHub Issues for technical problems
+
+* First Author: [gs2022@ic.ac.uk](mailto:gs2022@ic.ac.uk)
+* Corresponding Author: [fatemeh.geranmayeh00@imperial.ac.uk](mailto:fatemeh.geranmayeh00@imperial.ac.uk)
+
+For technical issues, please use GitHub Issues.
 
 ---
 
-**Last Updated:** 07/08/2025  
-
+**Last Updated:** 31/03/2026
 
