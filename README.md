@@ -63,7 +63,7 @@ This enables evaluation of **automatic speech recognition (ASR)** on post-stroke
 
 ## 📊 Data Access
 
-The SONIVA dataset is distributed across this repository and an external open-access archive.
+The SONIVA database is distributed across this repository and an external open-access archive.
 
 ### Open Access (Helix Repository)
 
@@ -75,15 +75,6 @@ This includes:
 
 * Participant metadata
 * Orthographic transcripts (.cha format)
-
----
-
-### Repository Contents
-
-This repository provides:
-
-* Acoustic features
-* Fine-tuned ASR model
 
 ---
 
