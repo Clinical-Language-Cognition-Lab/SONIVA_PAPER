@@ -145,17 +145,26 @@ If you use this repository or dataset, please cite:
 ## 📄 License
 
 ### Code
+All code in this repository is released under the MIT License.
 
-Released under the MIT License.
+### Data (Non-Audio)
+All non-audio data, including:
+- acoustic features  
+- transcripts  
+- metadata  
+- fine-tuned ASR model  
 
-### Data (non-audio)
-
-Released under CC BY 4.0.
+are released under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
 
 ### Audio Data
+The raw speech recordings are **not publicly distributed** due to ethical and data protection constraints, as they contain biometric and potentially identifiable information.
 
-Not publicly released. Access requires request, DUA completion, and approval.
+Access to the audio data is provided **upon request only**, subject to:
+- approval by the data controllers  
+- completion of a Data Usage Agreement (DUA)  
+- compliance with institutional and legal requirements  
 
+See the Data Access section for details on how to request access.
 ---
 
 ## 📞 Contact
