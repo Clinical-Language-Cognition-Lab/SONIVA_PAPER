@@ -157,14 +157,8 @@ All non-audio data, including:
 are released under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
 
 ### Audio Data
-The raw speech recordings are **not publicly distributed** due to ethical and data protection constraints, as they contain biometric and potentially identifiable information.
+Given the sensitivity of the speech audio data, the authors will review individual data access requests and will execute appropriate institutional data sharing agreement depending on the legal status and location of the data requestor.  The following conditions must be met: i) The academic requester should have appropriate ethical clearance according to their local regulations, ii) The data needs to be stored in a secure academic research environment, iii) There should be no attempt to re-identify participants, iv) in the unlikely event that a participant is identified through the audio recordings, the authors needs to be informed. Access will be granted via a secure institutional cloud link. This process ensures compliance with UK GDPR and the ethical standards governing sensitive biometric data. 
 
-Access to the audio data is provided **upon request only**, subject to:
-- approval by the data controllers  
-- completion of a Data Usage Agreement (DUA)  
-- compliance with institutional and legal requirements  
-
-See the Data Access section for details on how to request access.
 ---
 
 ## 📞 Contact
