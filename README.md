@@ -5,7 +5,7 @@ Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Park
 
 ---
 
-This repository provides resources developed for the **SONIVA database** available via: DOI: [https://doi.org/10.82186/ra9dv-4az59](https://doi.org/10.82186/ra9dv-4az59) (see below for description). Specifically, this page includes:
+This repository provides resources developed for the **SONIVA database** available via DOI: [https://doi.org/10.82186/ra9dv-4az59](https://doi.org/10.82186/ra9dv-4az59) (see below for description). Specifically, this page includes:
 
 * Acoustic features for downstream analyses and the associated classification algorithms 
 * A fine-tuned Whisper ASR model
