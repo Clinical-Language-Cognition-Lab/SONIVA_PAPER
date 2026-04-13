@@ -20,12 +20,6 @@ This folder contains:
 - `rf_classifier.py`
 - `nn_classifier.py`
 
-### This repository does NOT include
-
-- Raw audio data
-- Full clinical metadata beyond what is already embedded in the released feature files
-- Pretrained model weights
-
 ---
 
 ## Files in this Folder
