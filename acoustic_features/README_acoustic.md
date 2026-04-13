@@ -101,30 +101,119 @@ These scripts were written in Python and require the following main packages:
 
 ```bash
 pip install numpy pandas matplotlib scikit-learn imbalanced-learn torch
+```
+
+### Optional: Create a Virtual Environment
+
+Depending on your environment, you may wish to create a dedicated virtual environment first.
+
+```bash
+python -m venv soniva_env
+source soniva_env/bin/activate
+pip install numpy pandas matplotlib scikit-learn imbalanced-learn torch
+```
+
+For Windows users:
+
+```bash
+python -m venv soniva_env
+soniva_env\\Scripts\\activate
+pip install numpy pandas matplotlib scikit-learn imbalanced-learn torch
+```
 
 ---
 
-## 🧪 Methodological Notes
+## How to Run
 
-* Features were extracted using openSMILE (e.g., eGeMAPS configuration)
-* Classification experiments were conducted using standard machine learning approaches (e.g., SVM, Random Forest, Neural Networks)
-* Evaluation was performed using subject-level separation (e.g., group-based cross-validation)
+Place yourself inside the `acoustic_features` folder:
 
-This release focuses on **data transparency** and allows users to reproduce or extend the classification experiments using their own models and pipelines.
+```bash
+cd acoustic_features
+```
+
+Then run any of the classifiers:
+
+### SVM
+```bash
+python svm_classifier.py
+```
+
+### Random Forest
+```bash
+python rf_classifier.py
+```
+
+### Neural Network
+```bash
+python nn_classifier.py
+```
+
+The scripts assume that the following files are present in the same folder:
+
+- `train_acoustic_features.csv`
+- `test_acoustic_features.csv`
+
+If you move the scripts elsewhere, update the file paths inside the code accordingly.
 
 ---
 
-## ⚠️ Notes
+## What Each Script Does
 
-* This repository intentionally does **not** include trained models or training pipelines
-* Users are expected to implement their own classification models if needed
-* The provided features are sufficient to reproduce the experimental setup described in the associated work
+### `svm_classifier.py`
+- Standardises features
+- Uses `StratifiedGroupKFold` cross-validation on training participants only
+- Applies SMOTE only to training folds
+- Trains an RBF-kernel SVM
+- Computes participant-level test predictions
+- Exports misclassified participants and permutation feature importance
+
+### `rf_classifier.py`
+- Standardises features
+- Uses `StratifiedGroupKFold` cross-validation on training participants only
+- Applies SMOTE only to training folds
+- Trains a Random Forest classifier
+- Computes participant-level test predictions
+- Exports misclassified participants and feature importance rankings
+
+### `nn_classifier.py`
+- Standardises features within each fold
+- Uses `StratifiedGroupKFold` cross-validation on training participants only
+- Trains a feed-forward neural network with weighted binary cross-entropy loss
+- Tunes the classification threshold on validation data with a sensitivity constraint
+- Applies the median cross-validated threshold to the held-out test set
+- Exports misclassified participants, prediction probabilities, confusion matrix, and learning curves
 
 ---
 
-## 📞 Contact
+## Output Files
 
-* First Author: [gs2022@ic.ac.uk](mailto:gs2022@ic.ac.uk)
-* Corresponding Author: [fatemeh.geranmayeh00@imperial.ac.uk](mailto:fatemeh.geranmayeh00@imperial.ac.uk)
-* Issues: Use GitHub Issues for technical questions
+Running the scripts will generate result files such as:
+
+- test-set predictions
+- misclassified participant lists
+- feature importance tables
+- confusion matrix plots
+- learning-curve plots
+
+Exact filenames depend on the script.
+
+---
+
+## Methodological Notes
+
+- Evaluation is performed with participant-level separation to avoid leakage across segments from the same individual.
+- Segment-level acoustic features are aggregated to participant level using the mean.
+- Cross-validation is performed only on the training split.
+- The held-out test split remains untouched until final evaluation.
+
+These scripts are provided to support reproducibility of the classification experiments reported in the associated work.
+
+---
+
+## Contact
+
+- First Author: gs2022@ic.ac.uk
+- Corresponding Author: fatemeh.geranmayeh00@imperial.ac.uk
+
+For technical questions, please use GitHub Issues where possible.
 
