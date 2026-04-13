@@ -7,23 +7,53 @@ Giulia Sanguedolce, Cathy J. Price, Sophie Brook, Dragos C. Gruia, Niamh V. Park
 
 This repository provides resources developed for the **SONIVA database**, including:
 
-* Acoustic features for downstream analyses
+* Acoustic features for downstream analyses and the associated classification algorithms 
 * A fine-tuned Whisper ASR model
-
-The repository is designed as a **data and model release**, with a focus on transparency and reproducibility.
+* Data Usage Agreement file for data sharing purposes
 
 ---
 
-## 📦 Repository Components
+### 1.🎙️ Acoustic Features and Classification Models
 
-### 1. Acoustic Features
+The `acoustic_features/` directory contains participant-level acoustic feature datasets and reproducible classification scripts used in the SONIVA study.
 
-The `acoustic_features/` folder contains:
+### Included Files
 
-* Precomputed acoustic feature matrices (train/test splits used in the paper)
-* Features extracted using openSMILE from segmented speech
+- `train_acoustic_features.csv`
+- `test_acoustic_features.csv`
+- `svm_classifier.py`
+- `rf_classifier.py`
+- `nn_classifier.py`
 
-These features can be used for **classification tasks of the user's choice** or to support broader research pipelines, including studies aligned with the transcripts available via the Helix repository.
+These scripts reproduce acoustic-only experiments for binary classification of **Healthy vs Patient** speech.
+
+### Methodological Characteristics
+
+- Binary classification: **Healthy vs Patient**
+- Participant-level modelling via aggregation of segment-level features
+- Group-aware cross-validation using `StratifiedGroupKFold`
+- Strict separation between training and test participants to prevent data leakage
+
+### Model-Specific Details
+
+- **Support Vector Machine (SVM)**
+  - Radial Basis Function (RBF) kernel
+  - SMOTE applied within training folds only
+
+- **Random Forest (RF)**
+  - Ensemble-based classification
+  - SMOTE applied within training folds only
+
+- **Neural Network (NN)**
+  - Fully connected feed-forward architecture implemented in PyTorch
+  - Weighted `BCEWithLogitsLoss` to address class imbalance
+  - Validation-based threshold tuning with sensitivity constraints
+
+For detailed instructions on running these models, see:
+
+📄 `acoustic_features/README_acoustic.md`
+
+---
 
 #### Data Structure
 
@@ -61,7 +91,7 @@ This enables evaluation of **automatic speech recognition (ASR)** on impaired sp
 
 ---
 
-## 📊 Data Access
+## 3.📊 Data Access
 
 The SONIVA database is distributed across this repository and an external open-access archive.
 
@@ -100,34 +130,16 @@ A Data Usage Agreement (DUA) is provided in this repository and must be complete
 
 ---
 
-## 🧪 Methodological Overview
+## 🧠 Scientific Contributions
 
-### Acoustic Features
+SONIVA supports research at the intersection of artificial intelligence, speech processing, and clinical neuroscience. The dataset enables studies in:
 
-* Extracted using openSMILE (e.g., eGeMAPS configuration)
-* Derived from **utterance-level segmentation** aligned with CHAT (.cha) transcripts
-* Interviewer speech removed to retain only participant speech
-
-### ASR Model
-
-* Based on Whisper Medium (OpenAI)
-* Fully fine-tuned (encoder + decoder)
-* Trained on SONIVA audios and transcripts
-
----
-
-## 📂 Repository Structure
-
-```text
-SONIVA_PAPER/
-│
-├── acoustic_features/       # Acoustic feature dataset
-├── ASR_finetuned/           # Fine-tuned Whisper model
-├── .gitattributes           # Git LFS configuration
-├── .gitignore
-└── README.md
-```
-
+- Speech-based neurological assessment
+- Post-stroke aphasia analysis
+- Clinical automatic speech recognition
+- Computational paralinguistics
+- Machine learning for healthcare
+- Foundation models for clinical speech processing
 ---
 
 ## 📚 Citation
